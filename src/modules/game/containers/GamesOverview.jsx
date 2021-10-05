@@ -10,6 +10,7 @@ const GamesOverviewContainer = (props) => {
         state => models.game.selectors.filterBy(state, {})
     );
         
+    console.log("GAMES", games);
     return (
         <GamesOverview {...props} items={games}/>
     );

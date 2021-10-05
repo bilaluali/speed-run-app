@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import * as models from '../../models/redux';
+
 const rootReducer = combineReducers({
-    game: null,
+    game: models.game.reducers,
 });
 
 export default rootReducer;
