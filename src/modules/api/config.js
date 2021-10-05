@@ -1,0 +1,1 @@
+export const API_PATH = "http://www.speedrun.com/api/v1/games";
