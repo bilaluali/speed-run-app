@@ -24,8 +24,8 @@ const GamesOverview = ({
                     key={item.id}
                     xs={12}
                     sm={4}
-                    md={4}
-                    lg={3}
+                    md={3}
+                    lg={2}
                 >
                     <GameCard {...item}/>
                 </Grid>

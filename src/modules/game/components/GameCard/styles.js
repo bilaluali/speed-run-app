@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles(theme => ({
     root: {
         background: 'transparent !important',
-        boxShadow: '0px 3px 5px 0px rgb(0 0 0 / 7%) !important',
+        boxShadow: '0px 3px 5px 0px rgb(0 0 0 / 25%) !important',
         '&:hover': {
             border: `2px solid ${theme.palette.success.main}`,
         },
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
     cardContent: {},
     gameCardInfo: {
-        margin: '0px !important'
+        margin: '0px !important',
     }
 }));
 

@@ -16,7 +16,7 @@ const GameCardInfo = ({
             className={classnames(className, classes.root)}
             primary={primary}
             primaryTypographyProps={
-                React.useMemo(() => ({ variant: 'body1' }), [])
+                React.useMemo(() => ({ variant: 'body2' }), [])
             }
         />
     )
