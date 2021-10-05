@@ -6,8 +6,8 @@ const useStyles = makeStyles(unusedTheme => ({
     },
     avatar: {
         '&&': {
-            height: 24,
-            width: 24
+            height: 32,
+            width: 32
         },
         marginRight: 10,
     },
