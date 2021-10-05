@@ -1,8 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(theme => {
-    console.log('THEEEMEE', theme);
-    return{
+const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
         display: 'inline-block',
@@ -31,6 +29,6 @@ const useStyles = makeStyles(theme => {
         left: '5%',
         top: '5%'
     }
-}});
+}));
 
 export default useStyles;

@@ -27,6 +27,9 @@ const GamesOverviewPage = ({
                 spacing={4}
             >
                 <Grid item xs={12}>
+                    {heading}
+                </Grid>
+                <Grid item xs={12}>
                     {contents}
                 </Grid>
             </Grid>
