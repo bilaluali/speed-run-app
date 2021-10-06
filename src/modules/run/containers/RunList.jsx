@@ -11,22 +11,27 @@ const RunListContainer = ({
 }) => {
     const runs = useSelector(
         state => models.run.selectors.filterBy(state, { 
-            game: gameId
-        })[0]
-    );
-
-    const user = useSelector(
-        state => models.user.selectors.filterBy(state, { 
-            id: runs.users[0].id
+            game: gameId 
         })
     );
 
-    const items = React.useMemo(() =>
-        runs.map(run => ({
+    const userId = runs[0]?.users[0];
+
+    const user = useSelector(
+        state => userId &&
+            models.user.selectors.filterBy(state, {
+                id: userId 
+            })[0]
+    );
+
+    const items = React.useMemo(() => runs[0] && user
+        ? [{
+            id: runs[0].id,
             primary: user.name,
-            secondary: run.time,
-            video: run.videos[0]
-        })), 
+            secondary: runs[0].time,
+            video: runs[0].videos[0]
+        }]
+        : [],
         [runs, user]
     );
         

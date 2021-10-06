@@ -23,11 +23,11 @@ export default function useGameRunsQuery({
             .then(res => {
                 dispatch(
                     models.run.actionsCreators.addEntities(res.data)
-                )
+                );
             })
             .catch(error => {
-                console.log("ERR_FETCH: Cannot fetch data");
+                console.log("ERR_FETCH: Cannot fetch data", error);
             })
-    }, [dispatch]);
+    }, [gameId, dispatch]);
 
 };

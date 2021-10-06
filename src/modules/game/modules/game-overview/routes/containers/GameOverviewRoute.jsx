@@ -15,21 +15,18 @@ const GameOverviewRoute = (props) => {
     const runs = useSelector(
         state => models.run.selectors.filterBy(state, { 
             game: gameId
-        })[0]
-    );
-    const user = useSelector(
-        state => models.user.selectors.filterBy(state, { 
-            id: runs.users[0].id
         })
     );
-
+    
+    const userId = runs[0]?.users[0];
+   
     useGameQuery({ gameId });
     useGameRunsQuery({ gameId });
-    useUserQuery({ userId: user.id });
+    useUserQuery({ userId });
 
     return (
         <GameOverviewPage
-            contents={<RunList />}
+            contents={<RunList gameId={gameId}/>}
         />
     )
 };

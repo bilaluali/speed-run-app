@@ -22,12 +22,12 @@ export default function useUserQuery({
             })
             .then(res => {
                 dispatch(
-                    models.user.actionsCreators.addEntities(res.data)
-                )
+                    models.user.actionsCreators.addEntities([res.data])
+                );
             })
             .catch(error => {
                 console.log("ERR_FETCH: Cannot fetch data");
             })
-    }, [dispatch]);
+    }, [userId, dispatch]);
 
 };

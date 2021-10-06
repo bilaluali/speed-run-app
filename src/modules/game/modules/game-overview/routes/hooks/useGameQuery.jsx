@@ -22,12 +22,12 @@ export default function useGameQuery({
             })
             .then(res => {
                 dispatch(
-                    models.game.actionsCreators.addEntities(res.data)
-                )
+                    models.game.actionsCreators.addEntities([res.data])
+                );
             })
             .catch(error => {
                 console.log("ERR_FETCH: Cannot fetch data");
             })
-    }, [dispatch]);
+    }, [gameId, dispatch]);
 
 };
