@@ -5,7 +5,7 @@ import { API_PATH } from '../../../../../api/config';
 import * as models from '../../../../../models/redux';
 
 export default function useUserQuery({
-    user: userId
+    userId
 }) {
 
     const dispatch = useDispatch();
