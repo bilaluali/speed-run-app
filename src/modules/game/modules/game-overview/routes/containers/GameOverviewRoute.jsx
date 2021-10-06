@@ -6,6 +6,7 @@ import useGameRunsQuery from '../hooks/useGameRunsQuery';
 import useUserQuery from '../../../../../user/modules/user-overview/routes/hooks/useUserQuery';
 import GameOverviewPage from '../components/GameOverviewPage';
 import RunTable from '../../../../../run/containers/RunTable';
+import RunGameCard from '../../../../../run/containers/RunGameCard';
 import * as models from '../../../../../models/redux';
 
 const GameOverviewRoute = (props) => {
@@ -26,7 +27,8 @@ const GameOverviewRoute = (props) => {
 
     return (
         <GameOverviewPage
-            contents={<RunTable gameId={gameId}/>}
+            overview={<RunGameCard gameId={gameId}/>}
+            table={<RunTable gameId={gameId}/>}
         />
     )
 };
