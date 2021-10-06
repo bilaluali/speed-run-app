@@ -6,7 +6,7 @@ import * as models from '../../models/redux';
 
 
 const RunListContainer = ({
-    game: gameId,
+    gameId,
     ...props
 }) => {
     const runs = useSelector(
