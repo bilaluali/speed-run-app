@@ -26,7 +26,7 @@ const RunListItem = ({
                     <VideoIcon />
                 </IconButton>
             }
-
+            divider
         >
             <ListItemText
                 className={classes.listItemText}
