@@ -1,5 +1,5 @@
+import { uniqBy } from 'lodash';
 import { ADD_ENTITIES, REMOVE_ENTITIES } from './actions';
-
 
 export const initialState = {
   entities: []
@@ -8,7 +8,10 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ENTITIES:
-      return { ...state, entities: [...action.payload] }
+      return {
+        ...state,
+        entities: uniqBy([...action.payload], 'id')
+      };
     case REMOVE_ENTITIES:
       return initialState;
     default:
