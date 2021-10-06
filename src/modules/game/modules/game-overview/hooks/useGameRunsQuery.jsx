@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 import { API_PATH } from '../../../../../api/config';
 import * as models from '../../../../../models/redux';
 
-export default function useGamesQuery() {
+export default function useGameRunsQuery({
+    game: gameId
+}) {
 
     const dispatch = useDispatch();
 
@@ -12,7 +14,7 @@ export default function useGamesQuery() {
     // a redux side effect manager. App state was also kept with
     // a simple architecture.
     React.useEffect(() => {
-        fetch(`${API_PATH}/games`)
+        fetch(`${API_PATH}/runs?game=${gameId}`)
             .then(response => {
                 if (response.ok)
                     return response.json()
@@ -20,7 +22,7 @@ export default function useGamesQuery() {
             })
             .then(res => {
                 dispatch(
-                    models.game.actionsCreators.addEntities(res.data)
+                    models.run.actionsCreators.addEntities(res.data)
                 )
             })
             .catch(error => {
