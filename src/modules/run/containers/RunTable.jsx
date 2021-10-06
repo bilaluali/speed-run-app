@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 
-import RunList from '../components/RunList';
+import RunTable from '../components/RunTable';
 import * as models from '../../models/redux';
 
 
-const RunListContainer = ({
+const RunTableContainer = ({
     gameId,
     ...props
 }) => {
@@ -24,11 +24,11 @@ const RunListContainer = ({
             })[0]
     );
 
-    const items = React.useMemo(() => runs[0] && user
+    const rows = React.useMemo(() => runs[0] && user
         ? [{
             id: runs[0].id,
-            primary: user.name,
-            secondary: runs[0].time,
+            name: user.name,
+            time: runs[0].time,
             video: runs[0].videos[0]
         }]
         : [],
@@ -36,8 +36,8 @@ const RunListContainer = ({
     );
         
     return (
-        <RunList {...props} items={items}/>
+        <RunTable {...props} rows={rows}/>
     );
 };
 
-export default RunListContainer;
+export default RunTableContainer;
