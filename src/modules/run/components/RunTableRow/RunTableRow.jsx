@@ -26,7 +26,7 @@ const RunTableRow = ({
             className={classnames(className, classes.root)}
         >
             {RowCell(row.name)}
-            {RowCell(row.time)}
+            {RowCell(useTimeFormat(row.time))}
             {RowCell(
                 <IconButton
                     aria-label="video"
@@ -41,3 +41,6 @@ const RunTableRow = ({
 };
 
 export default RunTableRow;
+
+const useTimeFormat = secs => 
+    `${new Date(secs * 1000).toISOString().substr(11, 8)}s`;
