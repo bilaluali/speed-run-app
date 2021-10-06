@@ -12,6 +12,7 @@ const useStyles = makeStyles(unusedTheme => ({
 
 const GameOverviewPage = ({
     className,
+    heading,
     overview,
     table,
     ...props
@@ -24,8 +25,15 @@ const GameOverviewPage = ({
         >
             <Grid
                 container
-                spacing={10}
+                rowSpacing={5}
+                columnSpacing={10}
             >
+                <Grid
+                    item
+                    xs={12}
+                >
+                    {heading}
+                </Grid>
                 <Grid
                     item
                     xs={12}
