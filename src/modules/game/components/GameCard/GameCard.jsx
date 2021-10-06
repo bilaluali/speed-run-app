@@ -11,6 +11,7 @@ const GameCard = ({
     className,
     primary,
     image,
+    path,
     ...props
 }) => {
     const classes = useStyles();
@@ -29,6 +30,7 @@ const GameCard = ({
                 <GameCardInfo
                     className={classes.gameCardInfo}
                     primary={primary}
+                    path={path}
                 />
             </CardContent>
         </Card>
