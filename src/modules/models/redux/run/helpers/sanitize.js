@@ -10,7 +10,7 @@ const sanitize = (payload = []) =>
         ...[{
             id,
             game,
-            videos: [...videos.map(({ links }) => links.uri)],
+            videos: [...videos.links.map(({ uri }) => uri)],
             users: [...players.map(({ id }) => id)],
             time: times.primary_t
         }]
