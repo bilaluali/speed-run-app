@@ -1,4 +1,4 @@
-const sanitize = (payload = []) => 
+const sanitize = (payload = []) =>
     payload.reduce((acc, {
         id,
         game,
@@ -10,8 +10,8 @@ const sanitize = (payload = []) =>
         ...[{
             id,
             game,
-            videos: [...videos.links.map(({ uri }) => uri)],
-            users: [...players.map(({ id }) => id)],
+            videos: [...(videos?.links || []).map(({ uri }) => uri)],
+            users: [...(players || []).map(({ id }) => id)],
             time: times.primary_t
         }]
     ], []);

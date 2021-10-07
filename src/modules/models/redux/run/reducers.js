@@ -10,7 +10,10 @@ const reducer = (state = initialState, action) => {
     case ADD_RUN_ENTITIES:
       return {
         ...state,
-        entities: uniqBy([...action.payload], 'id')
+        entities: uniqBy([
+          ...state.entities,
+          ...action.payload
+        ], 'id')
       };
     case REMOVE_RUN_ENTITIES:
       return initialState;
@@ -20,4 +23,3 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
- 
