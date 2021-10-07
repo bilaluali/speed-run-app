@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TableHead, TableCell } from '@material-ui/core';
+import { TableHead, TableRow, TableCell } from '@material-ui/core';
 import classnames from 'classnames';
 
 import useStyles from './styles';
@@ -15,15 +15,19 @@ const RunTableHead = ({
             {...props}
             className={classnames(className, classes.root)}
         >
-            {columns.map(col => (
-                <TableCell
-                    key={col}
-                    className={classes.cell}
-                    align="justify"
-                >
-                    {col}
-                </TableCell>
-            ))}
+            <TableRow
+                className={classes.row}
+            >
+                {columns.map(col => (
+                    <TableCell
+                        key={col}
+                        className={classes.cell}
+                        align="justify"
+                    >
+                        {col}
+                    </TableCell>
+                ))}
+            </TableRow>
         </TableHead>
     )
 };

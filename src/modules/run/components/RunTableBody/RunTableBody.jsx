@@ -16,9 +16,9 @@ const RunTableBody = ({
             {...props}
             className={classnames(className, classes.body)}
         >
-            {rows.map(row => (
+            {rows.map((row, id) => (
                 <RunTableRow
-                    key={row.id}
+                    key={id}
                     row={row} />
             ))}
         </TableBody>
