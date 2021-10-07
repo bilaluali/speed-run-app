@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { TableRow, TableCell, IconButton } from '@material-ui/core';
-import VideoIcon from '@mui/icons-material/OndemandVideoTwoTone';
+import { TableRow } from '@material-ui/core';
 import classnames from 'classnames';
 
 import useStyles from './styles';
@@ -12,35 +11,24 @@ const RunTableRow = ({
 }) => {
     const classes = useStyles();
 
-    const RowCell = cell => (
-        <TableCell
-            className={classes.cell}
-            align="justify"
-        >
-            {cell}
-        </TableCell>
-    );
     return (
         <TableRow
             {...props}
             className={classnames(className, classes.root)}
         >
-            {RowCell(row.name)}
-            {RowCell(useTimeFormat(row.time))}
-            {RowCell(
-                <IconButton
-                    aria-label="video"
-                    color="error"
-                    href={row.video}
-                >
-                    <VideoIcon />
-                </IconButton>
-            )}
+            {row.map(({
+                RowCell,
+                RowCellProps 
+            }) => (
+                <RowCell
+                    key={RowCellProps.id}
+                    {...RowCellProps}
+                    className={classes.cell}
+                    align="justify"
+                />
+            ))}
         </TableRow>
     )
 };
 
 export default RunTableRow;
-
-const useTimeFormat = secs => 
-    `${new Date(secs * 1000).toISOString().substr(11, 8)}s`;
