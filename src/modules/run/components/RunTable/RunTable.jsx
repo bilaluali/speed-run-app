@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Table, TableBody } from '@material-ui/core';
+import { Table } from '@material-ui/core';
 import classnames from 'classnames';
 
-import RunTableRow from '../RunTableRow';
 import RunTableHead from '../RunTableHead';
+import RunTableBody from '../RunTableBody';
 import useStyles from './styles';
 
 const RunTable = ({
     className,
+    columns,
     rows,
     ...props
 }) => {
@@ -19,14 +20,14 @@ const RunTable = ({
             className={classnames(className, classes.root)}
             aria-label="Runs Table"
         >
-            <RunTableHead />
-            <TableBody className={classes.body}>
-                {rows.map(row => (
-                    <RunTableRow
-                        key={row.id}
-                        row={row} />
-                ))}
-            </TableBody>
+            <RunTableHead
+                className={classes.head}
+                columns={columns}
+            />
+            <RunTableBody
+                className={classes.body}
+                rows={rows}
+            />
         </Table>
     )
 };

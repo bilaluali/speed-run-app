@@ -4,7 +4,6 @@ const useStyles = makeStyles(theme => ({
     root: {},
     head: {},
     body: {},
-    row: {}
 }));
 
 export default useStyles;
