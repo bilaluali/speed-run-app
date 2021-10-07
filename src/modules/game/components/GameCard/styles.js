@@ -2,7 +2,10 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        background: 'transparent !important',
+        // NOTE: I don't like using !important. However Material-ui
+        // changed the way to style component and need to get used.
+        // MakeStyles is LEGACY.
+        backgroundColor: 'transparent !important',
         boxShadow: '0px 3px 5px 0px rgb(0 0 0 / 25%) !important',
         '&:hover': {
             border: `2px solid ${theme.palette.success.main}`,

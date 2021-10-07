@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 
-import GameCard from '../../game/components/GameCard';
+import RunGameCard from '../components/RunGameCard';
 import * as models from '../../models/redux';
 
 
-const RunGameCard = ({
+const RunGameCardContainer = ({
     gameId,
     ...props
 }) => {
@@ -16,7 +16,7 @@ const RunGameCard = ({
     );
         
     return (
-        <GameCard
+        <RunGameCard
             {...props}
             primary={game?.name}
             image={game?.image}
@@ -24,4 +24,4 @@ const RunGameCard = ({
     );
 };
 
-export default RunGameCard;
+export default RunGameCardContainer;
